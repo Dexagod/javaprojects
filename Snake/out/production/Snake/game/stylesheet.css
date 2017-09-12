@@ -1,0 +1,31 @@
+.tile:hover {
+  -fx-border-color: #000000;
+  -fx-border-width: 3px;
+}
+
+.whitetile {
+  -fx-background-color: #ffffff;
+}
+
+.blacktile {
+  -fx-background-color: #000000;
+}
+.blacktile:hover {
+  -fx-border-color: #ffffff;
+  -fx-border-width: 3px;
+}
+
+.starttile {
+  -fx-background-color: #a3b7af;
+}
+
+.endtile {
+  -fx-background-color: #08d180;
+}
+
+.oobtile {
+   -fx-visibility: hidden;
+}
+.oobtile:hover {
+  -fx-border-width: 0px;
+}
