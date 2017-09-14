@@ -1,12 +1,12 @@
 package game;
 
-import game.Items.Tiles.BlackTile;
-import game.Items.Tiles.EndTile;
-import game.Items.Location;
-import game.Items.Tiles.OutOfBoundsTile;
-import game.Items.Tiles.StartTile;
-import game.Items.Tiles.Tile;
-import game.Items.Tiles.WhiteTile;
+import game.items.tiles.BlackTile;
+import game.items.tiles.EndTile;
+import game.items.Location;
+import game.items.tiles.OutOfBoundsTile;
+import game.items.tiles.StartTile;
+import game.items.tiles.Tile;
+import game.items.tiles.WhiteTile;
 import java.io.IOException;
 
 public class TileGenerator {

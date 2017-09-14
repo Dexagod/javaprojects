@@ -1,5 +1,10 @@
+.tile {
+  -fx-border-color: #f442d9;
+  -fx-border-width: 1px;
+  }
+
 .tile:hover {
-  -fx-border-color: #000000;
+  -fx-border-color: #16c0e2;
   -fx-border-width: 3px;
 }
 
@@ -11,8 +16,6 @@
   -fx-background-color: #000000;
 }
 .blacktile:hover {
-  -fx-border-color: #ffffff;
-  -fx-border-width: 3px;
 }
 
 .starttile {
@@ -25,7 +28,23 @@
 
 .oobtile {
    -fx-visibility: hidden;
+  -fx-border-width: 0px;
 }
 .oobtile:hover {
   -fx-border-width: 0px;
+}
+
+.tileObject {
+	-fx-border-radius: 50%;
+  -fx-position:relative;
+
+}
+
+
+
+.barricade {
+  -fx-background-color: #efefef;
+}
+
+.pawn {
 }

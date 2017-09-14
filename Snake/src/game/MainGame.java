@@ -1,6 +1,6 @@
 package game;
 
-import game.GameRepresentation.GamePane;
+import game.gameRepresentation.GamePane;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -11,7 +11,7 @@ public class MainGame extends Application {
         GamePane gamePane = new GamePane(stage);
         Scene scene = new Scene(gamePane);
         gamePane.initialize(scene);
-      scene.getStylesheets().add(getClass().getResource("stylesheet.css").toExternalForm());
+        scene.getStylesheets().add(getClass().getResource("stylesheet.css").toExternalForm());
         stage.setTitle("Barricade");
         stage.setMaximized(true);
         stage.setScene(scene);

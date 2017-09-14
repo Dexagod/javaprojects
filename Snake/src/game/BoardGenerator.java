@@ -1,7 +1,7 @@
 package game;
 
-import game.Items.Board;
-import game.Items.Location;
+import game.items.Board;
+import game.items.Location;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
