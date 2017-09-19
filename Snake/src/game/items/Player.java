@@ -99,7 +99,7 @@ public class Player {
 
 
 
-  public Move requestMove(){
+  public Move requestMove(Board board, List<Move> possibleMoves){
     return playerMoveGenerator.requestMove();
   }
 

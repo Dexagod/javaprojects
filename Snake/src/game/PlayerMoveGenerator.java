@@ -1,6 +1,5 @@
 package game;
 
-import com.sun.javafx.tk.Toolkit.Task;
 import game.items.Board;
 import game.items.Move;
 import game.items.Player;
@@ -16,13 +15,11 @@ public class PlayerMoveGenerator {
   Move move = null;
 
   Tile origin = null;
-  Arbiter arbiter;
   Board board;
   Player player;
 
-  public PlayerMoveGenerator(Board board, Arbiter arbiter, Player player){
+  public PlayerMoveGenerator(Board board, Player player){
     this.board = board;
-    this.arbiter = arbiter;
     this.player = player;
   }
 

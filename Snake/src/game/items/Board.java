@@ -1,5 +1,7 @@
 package game.items;
 
+import game.items.tileObject.Barricade;
+import game.items.tileObject.Pawn;
 import game.items.tiles.EndTile;
 import game.items.tiles.StartTile;
 import game.items.tiles.Tile;
@@ -15,6 +17,8 @@ public class Board {
   List<StartTile> startTiles;
   List<EndTile> endTiles;
   List<WhiteTile> whiteTiles;
+  List<Barricade> barricades;
+  List<Pawn> pawns;
 
   public Board() {
     board = new ArrayList<>();
@@ -61,7 +65,7 @@ public class Board {
 
   public List<StartTile> getStartTiles(){
     if (startTiles == null || endTiles == null || whiteTiles == null){
-      findStartAndEndAndWhiteTiles();
+      findAllOnBoard();
     }
 
     return startTiles;
@@ -69,13 +73,13 @@ public class Board {
 
   public List<EndTile> getEndTiles(){
     if (startTiles == null || endTiles == null || whiteTiles == null){
-      findStartAndEndAndWhiteTiles();
+      findAllOnBoard();
     }
 
     return endTiles;
   }
 
-  private void findStartAndEndAndWhiteTiles(){
+  private void findAllOnBoard(){
     startTiles = new ArrayList<>();
     endTiles = new ArrayList<>();
     whiteTiles = new ArrayList<>();
@@ -91,15 +95,49 @@ public class Board {
         else if (tile instanceof WhiteTile){
           whiteTiles.add((WhiteTile) tile);
         }
+
+        if(tile.getTileObject() != null){
+          if (tile.getTileObject() instanceof  Barricade){
+            barricades.add((Barricade) tile.getTileObject());
+          } else if (tile.getTileObject() instanceof  Pawn){
+            pawns.add((Pawn) tile.getTileObject());
+          }
+        }
+      }
+    }
+  }
+
+  private void updateBoardObjects(){
+
+    pawns = new ArrayList<>();
+    barricades = new ArrayList<>();
+
+    for(List<Tile> column : board){
+      for(Tile tile : column) {
+        if(tile.getTileObject() != null){
+          if (tile.getTileObject() instanceof  Barricade){
+            barricades.add((Barricade) tile.getTileObject());
+          } else if (tile.getTileObject() instanceof  Pawn){
+            pawns.add((Pawn) tile.getTileObject());
+          }
+        }
       }
     }
   }
 
   public List<WhiteTile> getWhiteTiles(){
     if (startTiles == null || endTiles == null || whiteTiles == null){
-      findStartAndEndAndWhiteTiles();
+      findAllOnBoard();
     }
 
     return whiteTiles;
+  }
+
+  public List<Pawn> getPawns(){
+    return pawns;
+  }
+
+  public List<Barricade> getBarricades(){
+    return barricades;
   }
 }
